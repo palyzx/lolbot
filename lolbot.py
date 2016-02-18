@@ -61,8 +61,7 @@ def main():
 
         if response['items']:
             lastmessid = response['items'][0]['id']
-            for item in response['items']:
-                print('> ' + item['body'])
+            for item in response['items']:                
                 command(item, cmds, vk)           
 
         time.sleep(0.5)
@@ -76,7 +75,8 @@ def command(message, cmds, vk):
     prefixes = ['lolbot', u'лолбот', u'лб', u'чб', u'кб']
 
     if words[0].lower() in prefixes:
-        if len(words) > 1 and words[1] in cmds:
+        print('> ' + message['body'])
+        if len(words) > 1 and words[1] in cmds:            
             vk.markasread(message['id'])  # Помечаем прочитанным
             cmds[words[1].lower()].call(message)
 
