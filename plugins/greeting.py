@@ -5,17 +5,11 @@ import random
 
 class Plugin:
     vk = None
+    keys = [u'приветствие', 'greeting', u'привет', u'голос', u'ку']
 
     def __init__(self, vk):
         self.vk = vk
         print('Приветствия')
-
-    def getkeys(self):
-        keys = [u'приветствие', 'greeting', u'привет', u'голос', u'ку']
-        ret = {}
-        for key in keys:
-            ret[key] = self
-        return ret
 
     def call(self, msg):
         greetings = []

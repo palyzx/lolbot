@@ -6,17 +6,11 @@ import sys
 
 class Plugin:
     vk = None
+    keys = [u'плагины', 'plugins']
 
     def __init__(self, vk):
         self.vk = vk
         print('Список плагинов')
-
-    def getkeys(self):
-        keys = [u'плагины', 'plugins']
-        ret = {}
-        for key in keys:
-            ret[key] = self
-        return ret
 
     def call(self, msg):
         lists = ''

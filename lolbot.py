@@ -39,9 +39,9 @@ def main():
     print('---------------------------')
 
     # Регистрируем плагины
-    for plugin in plugins.values():
-        for key, value in plugin.getkeys().items():
-            cmds[key] = value
+    for plugin in plugins.values(): 
+        for key in plugin.keys:
+            cmds[key] = plugin
 
     print('Приступаю к приему сообщений')
 

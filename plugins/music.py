@@ -5,17 +5,11 @@ import random
 
 class Plugin:
     vk = None
+    keys = [u'музыка', u'музыку', 'music']
 
     def __init__(self, vk):
         self.vk = vk
         print('Плагин музыки')
-
-    def getkeys(self):
-        keys = [u'музыка', u'музыку', 'music']
-        ret = {}
-        for key in keys:
-            ret[key] = self
-        return ret
 
     def call(self, msg):
         music = None
