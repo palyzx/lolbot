@@ -21,13 +21,15 @@ class VkPlus:
 
     # values передаются все, кроме user_id/chat_id
     # Поэтому метод и называется respond, ваш кэп
+    # Сделано для упрощения ответа. В пагине или другом коде 
+    # не нужно "думать" о том, откуда пришло сообщение:
+    # из диалога, или из беседы (чата, конференции).
     def respond(self, to, values):
         if 'chat_id' in to:
             values['chat_id'] = to['chat_id']
-            self.api.method('messages.send', values)
         else:
             values['user_id'] = to['user_id']
-            self.api.method('messages.send', values)
+        self.api.method('messages.send', values)
 
     def markasread(self, id):
         values = {
