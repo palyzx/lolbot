@@ -17,15 +17,15 @@ def main():
     global lastmessid
     lastmessid = 0
 
-    print('LOLbot by akaluth')
+    print(u'LOLbot by akaluth')
 
-    print('Авторизация в вк...')
+    print(u'Авторизация в вк...')
 
     vk = VkPlus(settings.vk_login, settings.vk_password, settings.vk_app_id)
 
-    print('Подгружаем плагины...')
+    print(u'Подгружаем плагины...')
 
-    print('---------------------------')
+    print(u'---------------------------')
 
     # Подгружаем плагины
     sys.path.insert(0, path)
@@ -36,14 +36,14 @@ def main():
             plugins[fname] = mod.Plugin(vk)
     sys.path.pop(0)
 
-    print('---------------------------')
+    print(u'---------------------------')
 
     # Регистрируем плагины
     for plugin in plugins.values(): 
         for key in plugin.keys:
             cmds[key] = plugin
 
-    print('Приступаю к приему сообщений')
+    print(u'Приступаю к приему сообщений')
 
     while True:
 
