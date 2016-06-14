@@ -57,7 +57,7 @@ def main():
             'last_message_id': lastmessid
         }
 
-        response = vk.api.method('messages.get', values)
+        response = vk.method('messages.get', values)
 
         if response['items']:
             lastmessid = response['items'][0]['id']
