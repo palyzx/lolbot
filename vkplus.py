@@ -2,6 +2,8 @@
 # Класс с некоторыми доп. методами 
 
 import vk_api
+from requests import ConnectionError
+import errno
 
 
 class VkPlus:
